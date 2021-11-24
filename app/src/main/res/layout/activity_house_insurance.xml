@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HouseInsurance">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="12"
+            >
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/ownerNameHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_name_owner"
+                android:inputType="text"
+                android:text=""
+                android:layout_weight="1"
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/surnameOwnerHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_surname_owner"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/patronymicOwnerHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_patronymic_owner"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/passportDateHouse"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_passport_date"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_maxCharacters="10"
+                app:met_minCharacters="10"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/houseSize"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_house_size"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/ceilingHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/entry_field_celling_height"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/discountHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_discount_car"
+                android:inputType="number"
+                android:text=""
+                android:layout_weight="1"
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/streetHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_street_house"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/numberHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_number_house"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/floorHouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_floor_house"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/apartmentNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_apartment_number_house"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="15sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+            <Button
+                android:id="@+id/button_get_price_house"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="@string/button_insure_cars_price"
+                android:textColor="@color/white">
+
+            </Button>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

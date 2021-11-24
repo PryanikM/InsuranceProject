@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/button_color_pressed"
+    tools:target="lollipop">
+
+    <item>
+        <shape>
+            <solid android:color="@color/button_color" />
+            <stroke
+                android:color="@color/button_stroke_color"
+                android:width="2dp" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+
+</ripple>
