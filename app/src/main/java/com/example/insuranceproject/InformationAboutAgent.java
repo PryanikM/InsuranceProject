@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.TypedArrayUtils;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -35,7 +36,10 @@ public class InformationAboutAgent extends AppCompatActivity {
 
     private String agentName;
 
+    private EditText insuredHouses;
+
     private String agentID;
+    private EditText insuredCars;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -47,10 +51,9 @@ public class InformationAboutAgent extends AppCompatActivity {
 
         agentLogin = findViewById(R.id.textViewAgentLogin);
         agentPassword = findViewById(R.id.textViewAgentPassword);
-        EditText insuredCars = findViewById(R.id.textViewCountInsuredCars);
-        EditText insuredHouses = findViewById(R.id.textViewCountInsuredHouses);
-        ListView itemCars = findViewById(R.id.list_item_cars);
-        ListView itemHouses = findViewById(R.id.list_item_houses);
+        insuredHouses = findViewById(R.id.textViewCountInsuredHouses);
+        insuredCars = findViewById(R.id.textViewCountInsuredCars);
+        ListView items = findViewById(R.id.list_item);
 
         Button buttonChange = findViewById(R.id.buttonChange);
         Button buttonDelete = findViewById(R.id.buttonDelete);
@@ -58,41 +61,34 @@ public class InformationAboutAgent extends AppCompatActivity {
         agentName = getIntent().getExtras().get("agentName").toString();
         findPasswordAndPositionInFile();
 
+        ArrayList<String> arrayForAdapterCar = getArrayAdapterCars();
+        ArrayList<String> arrayForAdapterHouse = getArrayAdapterHouses();
         ArrayList<String> arrayForAdapter = getArrayAdapterCars();
 
-        if (arrayForAdapter == null){
-            arrayForAdapter = new ArrayList<>(Collections.singletonList(""));
-            insuredCars.setText(0 + " Машин");
+        if (arrayForAdapterHouse.isEmpty() && arrayForAdapterCar.isEmpty()){
+            arrayForAdapter.add("");
         }
-        else{
-            insuredCars.setText(arrayForAdapter.size() + " Машин");
+        else if(arrayForAdapterCar.isEmpty()){
+            arrayForAdapter = arrayForAdapterHouse;
+        }
+        else if(arrayForAdapterHouse.isEmpty()){
+            arrayForAdapter = arrayForAdapterCar;
+        }
+        else {
+            arrayForAdapter = arrayForAdapterCar;
+            arrayForAdapter.add("\n");
+            arrayForAdapter.addAll(arrayForAdapterHouse);
         }
 
-        ArrayAdapter<String> adapterCars = new ArrayAdapter<String>(
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
                 R.layout.list_item_style_view,
                 arrayForAdapter
         );
 
-        arrayForAdapter = getArrayAdapterHouses();
 
-        if (arrayForAdapter == null){
-            arrayForAdapter = new ArrayList<>(Collections.singletonList(""));
-            insuredHouses.setText(0 + " Квартир");
-        }
-        else{
-            insuredHouses.setText(arrayForAdapter.size() + " Квартир");
-        }
-
-        ArrayAdapter<String> adapterHouses = new ArrayAdapter<String>(
-                this,
-                R.layout.list_item_style_view,
-                arrayForAdapter
-
-        );
-
-        itemHouses.setAdapter(adapterHouses);
-        itemCars.setAdapter(adapterCars);
+        items.setAdapter(adapter);
 
         agentLogin.setText(agentName);
 
@@ -118,6 +114,7 @@ public class InformationAboutAgent extends AppCompatActivity {
     }
 
     private ArrayList<String> getArrayAdapterHouses() {
+        int countHouse = 0;
         String[] arrayStr;
         BufferedReader reader = null;
         ArrayList<String> arrayList = new ArrayList<>();
@@ -133,6 +130,8 @@ public class InformationAboutAgent extends AppCompatActivity {
                     String str = "Квартира на улице: " + arrayStr[1] + ", " + "номер : " +
                             arrayStr[2] + "\n" + "Этаж: " + arrayStr[3] + " " +
                             "Квартира: " + arrayStr[4] + "\n" + "Цена: " + arrayStr[12];
+
+                    countHouse++;
                     arrayList.add(str);
                 }
             }
@@ -150,10 +149,13 @@ public class InformationAboutAgent extends AppCompatActivity {
             }
         }
 
+        insuredHouses.setText(countHouse + " Квартир");
+
         return arrayList;
     }
 
     private ArrayList<String> getArrayAdapterCars() {
+        int countCar = 0;
         String[] arrayStr;
         BufferedReader reader = null;
         ArrayList<String> arrayList = new ArrayList<>();
@@ -169,6 +171,7 @@ public class InformationAboutAgent extends AppCompatActivity {
                     String str = "Машина: " + arrayStr[1] + "\n" + "Опыт вождения: " + arrayStr[2] +
                             "\n" + "Мощность двигателя: " + arrayStr[8] + "\n" +
                             "Цена: " + arrayStr[10];
+                    countCar++;
                     arrayList.add(str);
                 }
             }
@@ -184,6 +187,8 @@ public class InformationAboutAgent extends AppCompatActivity {
                 }
             }
         }
+
+        insuredCars.setText(countCar + " Машин");
 
         return arrayList;
     }

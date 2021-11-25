@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -241,6 +242,11 @@ public class HouseInsurance extends AppCompatActivity {
         else if (ownerPassportDate.getText().toString().length() != 10){
             ownerPassportDate.setError("Неверное количество символов");
             answer = false;
+        }
+
+        if(!answer){
+            Toast.makeText(this, "Проверьте поля.",
+                    Toast.LENGTH_SHORT).show();
         }
 
         return answer;

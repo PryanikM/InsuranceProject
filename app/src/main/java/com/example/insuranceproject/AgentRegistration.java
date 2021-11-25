@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -85,6 +86,7 @@ public class AgentRegistration extends AppCompatActivity {
                 writeData(inputNameAgent, inputPasswordAgent);
             }
 
+
         }
 
     }
@@ -127,6 +129,12 @@ public class AgentRegistration extends AppCompatActivity {
             agentPasswordAgain.setError("Пароли не совпадают");
             answer = false;
         }
+
+        if(!answer){
+            Toast.makeText(this, "Проверьте поля.",
+                    Toast.LENGTH_SHORT).show();
+        }
+
         return answer;
     }
 
@@ -157,6 +165,7 @@ public class AgentRegistration extends AppCompatActivity {
             e.printStackTrace();
 
         }
+        
 
         return answer;
 

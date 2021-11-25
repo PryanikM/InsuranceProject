@@ -6,155 +6,168 @@
     android:layout_height="match_parent"
     tools:context=".AgentRegistration">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent='true'
         android:layout_centerHorizontal="true"
-        android:layout_margin="25dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/button_register_agent"
+        android:gravity="center">
 
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/idAgent"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/entry_field_id_agent"
-            android:inputType="number"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
-
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
-
-        </com.rengwuxian.materialedittext.MaterialEditText>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/nameAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_name_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
-
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
-
-        </com.rengwuxian.materialedittext.MaterialEditText>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/surnameAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_surname_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
-
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
-
-        </com.rengwuxian.materialedittext.MaterialEditText>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/patronymicAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_patronymic_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
-
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
-
-        </com.rengwuxian.materialedittext.MaterialEditText>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/loginAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_login_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
-
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
-
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            android:gravity="center"
+            android:orientation="vertical">
 
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/passwordAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_password_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/idAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_id_agent"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
 
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
 
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            </com.rengwuxian.materialedittext.MaterialEditText>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/passwordAgainAgent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/entry_field_password_adain_agent"
-            android:inputType="text"
-            android:text=""
-            android:textColor="@color/design_default_color_primary"
-            android:textColorHint="@color/design_default_color_primary_dark"
-            android:textSize="20sp"
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/nameAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_name_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
 
-            app:met_baseColor="#0056d3"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#982360"
-            app:met_singleLineEllipsis="true">
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
 
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            </com.rengwuxian.materialedittext.MaterialEditText>
 
-        <Button
-            android:id="@+id/button_register_agent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/button_style"
-            android:text="@string/button_login_agent"
-            android:textColor="@color/white">
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/surnameAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_surname_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
 
-        </Button>
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/patronymicAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_patronymic_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/loginAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_login_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
 
 
-    </LinearLayout>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/passwordAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_password_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/passwordAgainAgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entry_field_password_adain_agent"
+                android:inputType="text"
+                android:text=""
+                android:textColor="@color/design_default_color_primary"
+                android:textColorHint="@color/design_default_color_primary_dark"
+                android:textSize="20sp"
+
+                app:met_baseColor="#0056d3"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#982360"
+                app:met_singleLineEllipsis="true">
+
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_register_agent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button_style"
+        android:text="@string/button_login_agent"
+        android:textColor="@color/white">
+
+    </Button>
 
 </RelativeLayout>

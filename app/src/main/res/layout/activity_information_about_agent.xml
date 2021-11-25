@@ -103,8 +103,8 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/aboveLinear"
+    <ListView
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -112,29 +112,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/topLinear"
         android:gravity="center"
-        android:layout_above="@+id/belowLinear"
-        android:orientation="vertical">
+        android:layout_above="@+id/belowLinear">
 
-
-        <ListView
-            android:id="@+id/list_item_cars"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1">
-
-        </ListView>
-
-        <ListView
-            android:id="@+id/list_item_houses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1">
-
-        </ListView>
-
-    </LinearLayout>
+    </ListView>
 
     <LinearLayout
         android:id="@+id/belowLinear"

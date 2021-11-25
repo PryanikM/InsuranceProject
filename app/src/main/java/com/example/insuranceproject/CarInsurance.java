@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -237,6 +238,11 @@ public class CarInsurance extends AppCompatActivity implements DatePickerDialog.
         else if (numberCar.getText().toString().length() != 6){
             numberCar.setError("Неверное количество символов");
             answer = false;
+        }
+
+        if(!answer){
+            Toast.makeText(this, "Проверьте поля.",
+                    Toast.LENGTH_SHORT).show();
         }
 
         return answer;
