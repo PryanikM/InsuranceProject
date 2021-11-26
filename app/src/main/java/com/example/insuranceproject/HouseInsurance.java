@@ -155,9 +155,18 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if(Integer.parseInt(houseNumber.getText().toString()) <= 0){
-            houseNumber.setError("Вы ввели неправильное число");
-            answer = false;
+        else{
+            try {
+                if(Integer.parseInt(houseNumber.getText().toString()) <= 0){
+                    houseNumber.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                houseNumber.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
         if (TextUtils.isEmpty(houseSize.getText().toString().replace(
@@ -166,10 +175,19 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if(Double.parseDouble(
-                houseSize.getText().toString().replace(",", ".")) <= 0){
-            houseSize.setError("Вы ввели неправильное число");
-            answer = false;
+        else {
+            try {
+                if(Double.parseDouble(
+                        houseSize.getText().toString().replace(",", ".")) <= 0){
+                    houseSize.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                houseSize.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
         if (TextUtils.isEmpty(houseCeilingHeight.getText().toString().replace(
@@ -178,10 +196,19 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if(Double.parseDouble(
-                houseCeilingHeight.getText().toString().replace(",", ".")) <= 0){
-            houseCeilingHeight.setError("Вы ввели неправильное число");
-            answer = false;
+        else{
+            try {
+                if(Double.parseDouble(
+                        houseCeilingHeight.getText().toString().replace(",", ".")) <= 0){
+                    houseCeilingHeight.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                houseCeilingHeight.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
 
@@ -191,10 +218,19 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if(Double.parseDouble(houseDiscount.getText().toString()) < 0 ||
-                Double.parseDouble(houseDiscount.getText().toString()) > 100){
-            houseDiscount.setError("Вы ввели неправильное число");
-            answer = false;
+        else {
+            try {
+                if(Double.parseDouble(houseDiscount.getText().toString()) < 0 ||
+                        Double.parseDouble(houseDiscount.getText().toString()) > 100){
+                    houseDiscount.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                houseDiscount.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
         if (TextUtils.isEmpty(houseFloorNumber.getText().toString().replace(
@@ -202,9 +238,18 @@ public class HouseInsurance extends AppCompatActivity {
             houseFloorNumber.setError("пустая строка");
             answer = false;
         }
-        else if(Integer.parseInt(houseFloorNumber.getText().toString()) <= 0){
-            houseFloorNumber.setError("Вы ввели неправильное число");
-            answer = false;
+        else {
+            try {
+                if(Integer.parseInt(houseFloorNumber.getText().toString()) <= 0){
+                    houseFloorNumber.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                houseFloorNumber.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
         if (TextUtils.isEmpty(apartmentNumber.getText().toString().replace(
                 " ", ""))) {
@@ -212,9 +257,18 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if(Integer.parseInt(apartmentNumber.getText().toString()) <= 0){
-            apartmentNumber.setError("Вы ввели неправильное число");
-            answer = false;
+        else{
+            try {
+                if (Integer.parseInt(apartmentNumber.getText().toString()) <= 0) {
+                    apartmentNumber.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                apartmentNumber.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
         if (TextUtils.isEmpty(ownerName.getText().toString().replace(
@@ -239,9 +293,18 @@ public class HouseInsurance extends AppCompatActivity {
             answer = false;
         }
 
-        else if (ownerPassportDate.getText().toString().length() != 10){
-            ownerPassportDate.setError("Неверное количество символов");
-            answer = false;
+        else{
+            try {
+                if (ownerPassportDate.getText().toString().length() != 10){
+                    ownerPassportDate.setError("Неверное количество символов");
+                    answer = false;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                ownerPassportDate.setError("Неверное количество символов");
+                answer = false;
+            }
+
         }
 
         if(!answer){

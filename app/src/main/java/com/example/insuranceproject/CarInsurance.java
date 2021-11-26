@@ -208,9 +208,18 @@ public class CarInsurance extends AppCompatActivity implements DatePickerDialog.
             powerCar.setError("пустая строка");
             answer = false;
         }
-        else if(Integer.parseInt(powerCar.getText().toString()) <= 0){
-            powerCar.setError("Вы ввели неправильное число");
-            answer = false;
+        else {
+            try {
+                if (Integer.parseInt(powerCar.getText().toString()) <= 0) {
+                    powerCar.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                powerCar.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
         if (TextUtils.isEmpty(ownerPassportDate.getText().toString().replace(" ", ""))) {
             ownerPassportDate.setError("пустая строка");
@@ -225,10 +234,19 @@ public class CarInsurance extends AppCompatActivity implements DatePickerDialog.
             discountCar.setError("пустая строка");
             answer = false;
         }
-        else if(Double.parseDouble(discountCar.getText().toString()) < 0. ||
-                Double.parseDouble(discountCar.getText().toString()) > 100. ){
-            discountCar.setError("Вы ввели неправильное число");
-            answer = false;
+        else {
+            try {
+                if(Double.parseDouble(discountCar.getText().toString()) < 0. ||
+                        Double.parseDouble(discountCar.getText().toString()) > 100.){
+                    discountCar.setError("Вы ввели неправильное число");
+                    answer = false;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                discountCar.setError("Вы ввели неправильное число");
+                answer = false;
+            }
+
         }
 
         if (TextUtils.isEmpty(numberCar.getText().toString().replace(" ", ""))) {

@@ -118,8 +118,17 @@ public class AgentRegistration extends AppCompatActivity {
             agentId.setError("пустая строка");
             answer = false;
         }
-        else if(Integer.parseInt(agentId.getText().toString()) < 0){
-            agentId.setError("Вы ввели неправильное число");
+        else {
+            try {
+                if( Integer.parseInt(agentId.getText().toString()) < 0){
+                    answer = false;
+                    agentId.setError("Вы ввели неправильное число");
+                }
+            } catch (NumberFormatException e) {
+                answer = false;
+                agentId.setError("Вы ввели неправильное число");
+                e.printStackTrace();
+            }
         }
         if (TextUtils.isEmpty(agentPasswordAgain.getText().toString().replace(" ", ""))) {
             agentPasswordAgain.setError("пустая строка");
@@ -165,7 +174,7 @@ public class AgentRegistration extends AppCompatActivity {
             e.printStackTrace();
 
         }
-        
+
 
         return answer;
 
